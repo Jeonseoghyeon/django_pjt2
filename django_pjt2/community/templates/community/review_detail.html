@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>DETAIL 페이지</h1>
+    Title : {{review.title}}<br>
+    Movie_title : {{review.movie_title}}<br>
+    rank : {{review.rank}}<br>
+    created_at : {{review.created_at}}<br>
+    updated_at : {{review.updated_at}}<br>
+    <form action="{% url 'community:update' review.id %}">
+        <button>글 수정</button>
+    </form>
+    <form action="{% url 'community:delete' review.pk %}" method="POST">
+        {% csrf_token %}
+        <button>글 삭제</button>
+    </form>
+    <a href="/community">Home으로</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="text-center">
+        <h1>새로운 Review를 작성해 보셔요 ^^</h1>
+        <form action = "" method="POST">
+            {% csrf_token %}
+            <p>TITLE<br>{{ form.title }}</p>
+            <p>MOVIE_TITLE<br>{{ form.movie_title }}</p>
+            <p>RANK(1 to 5)<br>{{ form.rank }}</p>
+            <p>CONTENT<br>{{ form.content }}</p>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
+
